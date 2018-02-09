@@ -15,8 +15,9 @@ jobs:
             sudo easy_install3 pip
             pip install awscli --upgrade --user
             ls ~/.local/bin
-            ls /usr/local/bin/python
-            ls -al /usr/local/bin/python
+            ls -a ~
+            export PATH=~/.local/bin:$PATH
+            source ~/.bash_profile
       
       - run:
             name: Deploy to S3 if tests pass and branch is Master
