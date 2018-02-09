@@ -18,6 +18,7 @@ jobs:
             ls -a ~
             export PATH=~/.local/bin:$PATH
             source ~/.profile
+            aws s3 sync / s3://dev.sunnydoors.co.uk --delete
       
       - run:
             name: Deploy to S3 if tests pass and branch is Master
