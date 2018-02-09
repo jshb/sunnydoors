@@ -11,7 +11,7 @@ jobs:
           name: Install
           command: yarn install
 
-  deployment:
+  deploy:
     staging:
       branch: master
       codedeploy:
