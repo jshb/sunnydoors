@@ -11,7 +11,8 @@ jobs:
           command: |
             sudo apt-get -y -qq update
             sudo apt-get -y -qq install python3.4-dev
-            sudo easy_install pip
+            sudo apt-get install python3-setuptools
+            sudo easy_install3 pip
             pip install awscli --upgrade --user
       
       - run:
