@@ -10,16 +10,3 @@ jobs:
       - run:
           name: Install
           command: yarn install
- deployment:
-   staging:
-     branch: master
-     codedeploy:
-       sunnydoors:
-         application_root: /
-         region: eu-west-2
-         revision_location:
-           revision_type: S3
-           s3_location:
-             bucket: dev.sunnydoors.co.uk
-             key_pattern: {BRANCH}-{SHORT_COMMIT}
-         deployment_group: my-deployment-group
