@@ -9,6 +9,7 @@ jobs:
       - run:
           name: Install dependencies
           command: |
+            ls /home/circleci/project
             sudo apt-get -y -qq update
             sudo apt-get -y -qq install python3.4-dev
             sudo apt-get install python3-setuptools
@@ -16,7 +17,6 @@ jobs:
             pip install awscli --upgrade --user
             export PATH=~/.local/bin:$PATH
             source ~/.profile
-            ls tmp
             #aws s3 sync / s3://dev.sunnydoors.co.uk --delete
       
 
