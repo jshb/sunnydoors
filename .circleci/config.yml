@@ -6,7 +6,7 @@ jobs:
     steps:
       - checkout
       
-      - run
+      - run:
         name: Install dependencies
           working_directory: /
           command: |
