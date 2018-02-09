@@ -1,0 +1,22 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8.9.3
+    steps:
+      - checkout
+      
+      - run:
+          name: Install dependencies
+          command: |
+            sudo apt-get -y -qq update
+            sudo apt-get -y -qq install python3.4-dev
+            sudo apt-get install python3-setuptools
+            sudo easy_install3 pip
+            pip install awscli --upgrade --user
+            export PATH=~/.local/bin:$PATH
+            source ~/.profile
+            aws s3 sync /home/circleci/project s3://dev.sunnydoors.co.uk/$CIRCLE_BRANCH --delete
+      
+
+          
