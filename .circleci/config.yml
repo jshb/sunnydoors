@@ -14,13 +14,13 @@ jobs:
             sudo apt-get install python3-setuptools
             sudo easy_install3 pip
             pip install awscli --upgrade --user
+            aws --version
             ls ~/.local/bin
             ls -a ~
             export PATH=~/.local/bin:$PATH
             source ~/.profile
-            aws s3 sync / s3://dev.sunnydoors.co.uk --delete
+            ls tmp
+            #aws s3 sync / s3://dev.sunnydoors.co.uk --delete
       
-      - run:
-            name: Deploy to S3 if tests pass and branch is Master
-            command: aws s3 sync / s3://dev.sunnydoors.co.uk --delete
+
           
