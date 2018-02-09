@@ -6,7 +6,3 @@ jobs:
 
     steps:
       - checkout
-
-      - run:
-          name: Install
-          command: yarn install
