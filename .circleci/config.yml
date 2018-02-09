@@ -16,7 +16,7 @@ jobs:
             pip install awscli --upgrade --user
             export PATH=~/.local/bin:$PATH
             source ~/.profile
-            aws s3 sync /home/circleci/project s3://dev.sunnydoors.co.uk --delete
+            aws s3 sync /home/circleci/project s3://dev.sunnydoors.co.uk/{BRANCH} --delete
       
 
           
