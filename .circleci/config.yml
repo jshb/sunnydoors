@@ -14,6 +14,9 @@ jobs:
             sudo apt-get install python3-setuptools
             sudo easy_install3 pip
             pip install awscli --upgrade --user
+            ls ~/.local/bin
+            ls /usr/local/bin/python
+            ls -al /usr/local/bin/python
       
       - run:
             name: Deploy to S3 if tests pass and branch is Master
