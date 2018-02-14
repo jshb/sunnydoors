@@ -5,7 +5,12 @@ jobs:
       - image: circleci/node:8.9.3
     steps:
       - checkout
-      
+
+      - run:
+          name: Query pull request comments
+          command: |
+            curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET https://api.github.com/repos/jshb/sunnydoors/pulls/3/comments
+            
       - run:
           name: Install dependencies
           command: |
@@ -22,8 +27,4 @@ jobs:
             source ~/.profile
             aws s3 sync /home/circleci/project s3://dev.sunnydoors.co.uk/$CIRCLE_BRANCH --delete
       
-      - run:
-          name: Query pull request comments
-          command: |
-            curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET https://api.github.com/repos/jshb/sunnydoors/pulls/3/comments
           
