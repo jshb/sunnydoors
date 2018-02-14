@@ -25,5 +25,5 @@ jobs:
       - run:
           name: Query pull request comments
           command: |
-            curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET https://api.github.com/repos/jshb/sunnydoors/pulls/2/comments
+            curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET https://api.github.com/repos/jshb/sunnydoors/pulls/3/comments
           
